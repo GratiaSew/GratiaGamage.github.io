@@ -1,0 +1,6 @@
+#toggle-content {
+  display: none;  /* Initially hidden */
+  transition: max-height 0.3s ease-out;
+  overflow: hidden;
+  max-height: 5000px;  /* A large value for when expanded */
+}

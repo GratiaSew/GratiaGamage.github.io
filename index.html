@@ -25,6 +25,8 @@
         <link href="css/magnific-popup.css" rel="stylesheet">
 
         <link href="css/templatemo-first-portfolio-style.css" rel="stylesheet">
+
+        <link href="css/smooth-transition.css" rel="stylesheet">
         
     </head>
     
@@ -300,9 +302,9 @@
                                 <div class="col-lg-6 col-12">
                                     <div class="services-thumb">
                                         <div class="d-flex flex-wrap align-items-center border-bottom mb-4 pb-3">
-                                            <h3 class="mb-0">Supplier Warranty Enhancement for IFS</h3>
+                                            <h3 class="mb-0" id="toggle-header" style="cursor: pointer;">Supplier Warranty Enhancement for IFS</h3>
                                         </div>
-                                        <div class="container-proj">
+                                        <div class="container-proj" id="toggle-content" style="display: none;">
                                             <h4>Purpose</h4>
                                             <p class="p-proj">
                                                 IFS currently supports Supplier Warranty for serialized parts via a Supplier Warranty Type Template. HAL requires extending this to Lot Batch Parts and allowing different warranty start dates (e.g., date of landing, inspection, or installation).
@@ -804,6 +806,7 @@
         <script src="js/jquery.magnific-popup.min.js"></script>
         <script src="js/magnific-popup-options.js"></script>
         <script src="js/custom.js"></script>
+        <script src="js/smooth-transition.js"></script>
 
     </body>
 </html>
