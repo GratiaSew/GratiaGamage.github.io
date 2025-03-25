@@ -471,33 +471,6 @@
                                 <div class="col-lg-6 col-12">
                                     <div class="services-thumb services-thumb-up">
                                         <div class="d-flex flex-wrap align-items-center border-bottom mb-4 pb-3 toggle-header" style="cursor: pointer;">
-                                            <h3 class="mb-0">Cheque Print</h3>
-                                        </div>
-                                        <div class="container-proj toggle-content" style="display: none;">
-                                            <h4>Purpose</h4>
-                                            <p class="p-proj">
-                                                <strong>Report Type:</strong> Order Report <br>
-                                                <strong>Usage:</strong> Formatted Reports which are typically printed or mailed. Output will be in PDF format. It is possible to create additional Excel layouts (Report Designer only). <br>
-                                                <strong>Tools used:</strong> IFS Report Designer or Crystal Reports
-                                            </p>
-                                    
-                                            <h4>Report Logic</h4>
-                                            <ul class="ul-proj">
-                                                <li class="p-proj">Physical cheque to be printed on pre-printed stationery.</li>
-                                                <li class="p-proj">Verify that the selected Cash Account and Cheque number is in ‘Mixed Payment’ with status = ‘Approved’. If not, do not allow proceeding to print.</li>
-                                                <li class="p-proj">Selected Cash Account and Cheque number should be within the ‘Session Company Code’ as in INPUT Screen.</li>
-                                                <li class="p-proj">Validate that the selected Cash Account and Cheque number is valid in Mixed Payment. If not valid, do not allow proceeding to print.</li>
-                                                <li class="p-proj">Ensure that the selected Cash Account and Cheque number has not already been printed. If printed, do not allow proceeding to print.</li>
-                                                <li class="p-proj">To print the ‘Pay’ in cheque, refer to the Payment Advice ID in Mixed Payment, and retrieve the Favoring Name from Payment Advice → Mode of Payment → Field C_PA_MODE_OF_PAYMENT.Favoring_Name.</li>
-                                            </ul>
-                                    
-                                            <h4>Cheque Layout Example</h4>
-                                            <img src="images/cheque.png" alt="Cheque Print Sample" style="width:100%; max-width:800px; display:block; margin:10px 0;">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="services-thumb services-thumb-up">
-                                        <div class="d-flex flex-wrap align-items-center border-bottom mb-4 pb-3 toggle-header" style="cursor: pointer;">
                                             <h3 class="mb-0">Cost-Plus Design Contracts Enhancement</h3>
                                         </div>
                                         <div class="container-proj toggle-content" style="display: none;">
@@ -530,6 +503,33 @@
                                             <p class="p-proj">
                                                 This enhancement ensures accurate cost tracking, financial transparency, and improved management of cost-plus design contracts in HAL.
                                             </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="services-thumb services-thumb-up">
+                                        <div class="d-flex flex-wrap align-items-center border-bottom mb-4 pb-3 toggle-header" style="cursor: pointer;">
+                                            <h3 class="mb-0">Cheque Print</h3>
+                                        </div>
+                                        <div class="container-proj toggle-content" style="display: none;">
+                                            <h4>Purpose</h4>
+                                            <p class="p-proj">
+                                                <strong>Report Type:</strong> Order Report <br>
+                                                <strong>Usage:</strong> Formatted Reports which are typically printed or mailed. Output will be in PDF format. It is possible to create additional Excel layouts (Report Designer only). <br>
+                                                <strong>Tools used:</strong> IFS Report Designer or Crystal Reports
+                                            </p>
+                                    
+                                            <h4>Report Logic</h4>
+                                            <ul class="ul-proj">
+                                                <li class="p-proj">Physical cheque to be printed on pre-printed stationery.</li>
+                                                <li class="p-proj">Verify that the selected Cash Account and Cheque number is in ‘Mixed Payment’ with status = ‘Approved’. If not, do not allow proceeding to print.</li>
+                                                <li class="p-proj">Selected Cash Account and Cheque number should be within the ‘Session Company Code’ as in INPUT Screen.</li>
+                                                <li class="p-proj">Validate that the selected Cash Account and Cheque number is valid in Mixed Payment. If not valid, do not allow proceeding to print.</li>
+                                                <li class="p-proj">Ensure that the selected Cash Account and Cheque number has not already been printed. If printed, do not allow proceeding to print.</li>
+                                                <li class="p-proj">To print the ‘Pay’ in cheque, refer to the Payment Advice ID in Mixed Payment, and retrieve the Favoring Name from Payment Advice → Mode of Payment → Field C_PA_MODE_OF_PAYMENT.Favoring_Name.</li>
+                                            </ul>
+                                    
+                                            <h4>Cheque Layout Example</h4>
+                                            <img src="images/cheque.png" alt="Cheque Print Sample" style="width:100%; max-width:800px; display:block; margin:10px 0;">
                                         </div>
                                     </div>
                                     
