@@ -27,6 +27,31 @@
       }, 300);
   }
 });
+
+    var contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        var formData = new FormData(contactForm);
+        var topics = formData.getAll('topic');
+        var subject = 'Portfolio enquiry from ' + formData.get('name').trim();
+        var body = [
+          'Name: ' + formData.get('name').trim(),
+          'Email: ' + formData.get('email').trim(),
+          'Interested in: ' + (topics.length ? topics.join(', ') : 'General enquiry'),
+          '',
+          formData.get('message').trim()
+        ].join('\n');
+        var mailto = 'mailto:gratia12@gmail.com'
+          + '?subject=' + encodeURIComponent(subject)
+          + '&body=' + encodeURIComponent(body);
+
+        document.getElementById('contact-form-status').textContent =
+          'Your email app should open with this draft. Review it and press Send to email me.';
+        window.location.href = mailto;
+      });
+    }
     
   })(window.jQuery);
 
