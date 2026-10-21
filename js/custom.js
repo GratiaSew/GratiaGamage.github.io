@@ -34,22 +34,52 @@
         event.preventDefault();
 
         var formData = new FormData(contactForm);
-        var topics = formData.getAll('topic');
-        var subject = 'Portfolio enquiry from ' + formData.get('name').trim();
-        var body = [
-          'Name: ' + formData.get('name').trim(),
-          'Email: ' + formData.get('email').trim(),
-          'Interested in: ' + (topics.length ? topics.join(', ') : 'General enquiry'),
-          '',
-          formData.get('message').trim()
-        ].join('\n');
-        var mailto = 'mailto:gratia12@gmail.com'
-          + '?subject=' + encodeURIComponent(subject)
-          + '&body=' + encodeURIComponent(body);
+        var payload = {};
+        formData.forEach(function(value, key) {
+          if (key === 'topic') {
+            payload.topic = payload.topic || [];
+            payload.topic.push(value);
+          } else {
+            payload[key] = value;
+          }
+        });
 
-        document.getElementById('contact-form-status').textContent =
-          'Your email app should open with this draft. Review it and press Send to email me.';
-        window.location.href = mailto;
+        payload._subject = 'Portfolio enquiry from ' + String(payload.name).trim();
+
+        var submitButton = contactForm.querySelector('button[type="submit"]');
+        var status = document.getElementById('contact-form-status');
+        var originalLabel = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+        status.textContent = 'Sending your message...';
+
+        fetch(contactForm.action, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        })
+          .then(function(response) {
+            return response.json().then(function(result) {
+              if (!response.ok || result.success === 'false' || result.success === false) {
+                throw new Error(result.message || 'Message delivery failed.');
+              }
+              return result;
+            });
+          })
+          .then(function() {
+            status.textContent = 'Thanks. Your message was submitted successfully.';
+            contactForm.reset();
+          })
+          .catch(function() {
+            status.textContent = 'We could not send your message right now. Please email gratia12@gmail.com directly.';
+          })
+          .finally(function() {
+            submitButton.disabled = false;
+            submitButton.textContent = originalLabel;
+          });
       });
     }
     
