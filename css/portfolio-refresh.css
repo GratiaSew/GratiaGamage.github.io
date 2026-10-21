@@ -387,17 +387,48 @@ p, ul li { color: var(--p-color); }
   padding-top: 8px;
 }
 
+.credential-wallet {
+  margin-top: 24px;
+  padding: 24px;
+  background: #f7f6f1;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+.credential-wallet-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.credential-wallet-heading .projects-tag {
+  margin-bottom: 3px;
+}
+
+.credential-wallet-heading h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.credential-count {
+  flex: 0 0 auto;
+  color: var(--p-color);
+  font-size: 12px;
+  font-weight: 600;
+}
+
 .credential-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  padding-top: 8px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .credential-item {
   display: flex;
   min-width: 0;
-  min-height: 174px;
+  min-height: 220px;
   flex-direction: column;
   align-items: flex-start;
   padding: 12px;
@@ -417,8 +448,8 @@ p, ul li { color: var(--p-color); }
 }
 
 .credential-item img {
-  width: 72px;
-  height: 72px;
+  width: 92px;
+  height: 92px;
   align-self: center;
   margin-bottom: 10px;
   object-fit: contain;
@@ -435,6 +466,12 @@ p, ul li { color: var(--p-color); }
   color: var(--p-color);
   font-size: 10px;
   line-height: 1.4;
+}
+
+@media (max-width: 991px) {
+  .credential-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .contact {
@@ -620,12 +657,35 @@ p, ul li { color: var(--p-color); }
     padding: 10px 8px;
   }
 
+  .credential-wallet {
+    padding: 18px 14px;
+  }
+
+  .credential-wallet-heading {
+    align-items: start;
+  }
+
+  .credential-wallet-heading h3 {
+    font-size: 19px;
+  }
+
   .credential-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
   }
 
   .credential-item {
-    min-height: 0;
+    min-height: 190px;
+    padding: 10px;
+  }
+
+  .credential-item img {
+    width: 76px;
+    height: 76px;
+  }
+
+  .credential-title {
+    font-size: 11px;
   }
 }
 
